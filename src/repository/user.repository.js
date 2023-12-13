@@ -6,7 +6,7 @@ async function getAllUserDB() {
 }
 
 async function getUserByIdDB(_id) {
-    const data = await TableUser.find({_id: new ObjectId(_id)});
+    const data = await TableUser.find({ _id: new ObjectId(_id)})
     return data;
 }
 
@@ -17,13 +17,13 @@ async function createUserDB(user) {
 }
 
 async function upUserDB(_id, user) {
-    await TableUser.updateOne({_id: new ObjectId(_id)}, {$set: user});
+    await TableUser.updateOne({ _id: new ObjectId(_id) }, { $set: user });
     const data = await TableUser.find();
     return data;
 }
 
 async function deleteUserByIdDB(_id) {
-    await TableUser.deleteOne({_id: new ObjectId(_id)});
+    await TableUser.deleteOne({ _id: new ObjectId(_id) });
     const data = await TableUser.find();
     return data;
 }
