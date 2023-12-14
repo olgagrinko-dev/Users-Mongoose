@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAllSkill} = require('../service/user.service');
+const { getAllSkill } = require('../service/user.service');
 const routeSkill = express.Router();
 
 routeSkill.get('/', async (req, res) => {
@@ -10,3 +10,5 @@ routeSkill.get('/', async (req, res) => {
         res.status(404).send(error.message);
     }
 })
+
+module.exports = routeSkill;
