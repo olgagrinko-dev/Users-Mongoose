@@ -1,8 +1,13 @@
-const { getAllSkillDB } = require('../repository/skill.repository')
+const { getAllSkillDB, getSkillByIdDB } = require('../repository/skill.repository')
 
 async function getAllSkill() {
     const data = await getAllSkillDB();
     return data;
 }
 
-module.exports = { getAllSkill }
+async function getSkillById(_id) {
+    const data = await getSkillByIdDB(_id);
+    return data;
+}
+
+module.exports = { getAllSkill, getSkillById }
