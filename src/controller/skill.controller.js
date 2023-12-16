@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllSkill, getSkillById } = require('../service/skill.service');
+const { getAllSkill, getSkillById, createSkill } = require('../service/skill.service');
 const routeSkill = express.Router();
 
 routeSkill.get('/', async (req, res) => {
@@ -19,4 +19,14 @@ routeSkill.get('/:id', async (req, res) => {
         res.status(404).send(error.message);
     }
 })
+
+routeSkill.post('/', async (req, res) => {
+    try {
+        const data = await createSkill(req.body);
+        res.send(data);
+    } catch (error) {
+        res.status(404).send(error.message);
+    }
+})
+
 module.exports = routeSkill;

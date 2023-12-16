@@ -1,13 +1,19 @@
-const { TableUser, ObjectId } = require('../db');
+const { TableSkill, ObjectId } = require('../db');
 
 async function getAllSkillDB() {
-    const data = await TableUser.find();
+    const data = await TableSkill.find();
     return data;
 }
 
 async function getSkillByIdDB(_id) {
-    const data = await TableUser.find({ _id: new ObjectId(_id) });
+    const data = await TableSkill.find({ _id: new ObjectId(_id) });
     return data;
 }
 
-module.exports = { getAllSkillDB, getSkillByIdDB }
+async function createSkillDB(skill) {
+    await TableSkill.create(skill);
+    const data = await TableSkill.find();
+    return data;  
+}
+
+module.exports = { getAllSkillDB, getSkillByIdDB, createSkillDB }
