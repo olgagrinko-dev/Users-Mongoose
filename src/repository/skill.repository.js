@@ -13,7 +13,13 @@ async function getSkillByIdDB(_id) {
 async function createSkillDB(skill) {
     await TableSkill.create(skill);
     const data = await TableSkill.find();
-    return data;  
+    return data;
 }
 
-module.exports = { getAllSkillDB, getSkillByIdDB, createSkillDB }
+async function upSkillDB(_id, skill) {
+    await TableUser.updateOne({ _id: new ObjectId(_id) }, { $set: skill });
+    const data = await TableUser.find();
+    return data;
+}
+
+module.exports = { getAllSkillDB, getSkillByIdDB, createSkillDB, upSkillDB }
