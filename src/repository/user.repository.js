@@ -23,7 +23,7 @@ async function upUserDB(_id, user) {
 }
 
 async function deleteUserByIdDB(_id) {
-    await TableUser.deleteOne({ _id: new ObjectId(_id) });
+    await TableUser.deleteOne({ _id: new ObjectId(_id)});
     const data = await TableUser.find();
     return data;
 }
