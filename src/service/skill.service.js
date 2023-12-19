@@ -10,17 +10,18 @@ async function getSkillById(_id) {
     return data;
 }
 
-async function createSkill(skill) {
-    const data = await createSkillDB(skill);
+async function createSkill(skills) {
+    const data = await createSkillDB(skills);
     return data;
 }
 
-async function upSkill(_id, skill) {
-    const data = await upSkillDB(_id, skill);
+async function upSkill(_id, skills) {
+    const data = await upSkillDB(_id, skills);
     return data;
 }
 
 async function deleteSkillById(_id) {
+    console.log(_id);
     const data = await deleteSkillByIdDB(_id);
     return data;
 }

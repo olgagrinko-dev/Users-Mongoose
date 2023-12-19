@@ -5,13 +5,13 @@ const routeSkill = express.Router();
 routeSkill.get('/', async (req, res) => {
     try {
         const data = await getAllSkill()
-        res.status(200).send(data);
+        res.send(data);
     } catch (error) {
         res.status(404).send(error.message);
     }
 })
 
-routeSkill.get('/:id', async (req, res) => {
+routeSkill.get('/:_id', async (req, res) => {
     try {
         const data = await getSkillById(req.params._id);
         res.send(data);
@@ -29,7 +29,7 @@ routeSkill.post('/', async (req, res) => {
     }
 })
 
-routeSkill.put('/:id', async (req, res) => {
+routeSkill.put('/:_id', async (req, res) => {
     try {
         const data = await upSkill(req.params._id, req.body)
         res.send(data);
@@ -38,7 +38,7 @@ routeSkill.put('/:id', async (req, res) => {
     }
 })
 
-routeSkill.delete('/:id', async (req, res) => {
+routeSkill.delete('/:_id', async (req, res) => {
     try {
         const data = await deleteSkillById(req.params._id)
         res.send(data);
