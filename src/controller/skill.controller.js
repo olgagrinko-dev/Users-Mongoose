@@ -4,10 +4,10 @@ const routeSkill = express.Router();
 
 routeSkill.get('/', async (req, res) => {
     try {
-        const data = await getAllSkill()
+        const data = await getAllSkill();
         res.send(data);
     } catch (error) {
-        res.status(404).send(error.message);
+        res.send(error.message);
     }
 })
 
@@ -16,7 +16,7 @@ routeSkill.get('/:_id', async (req, res) => {
         const data = await getSkillById(req.params._id);
         res.send(data);
     } catch (error) {
-        res.status(404).send(error.message);
+        res.send(error.message);
     }
 })
 
@@ -25,25 +25,25 @@ routeSkill.post('/', async (req, res) => {
         const data = await createSkill(req.body);
         res.send(data);
     } catch (error) {
-        res.status(404).send(error.message);
+        res.send(error.message);
     }
 })
 
 routeSkill.put('/:_id', async (req, res) => {
     try {
-        const data = await upSkill(req.params._id, req.body)
+        const data = await upSkill(req.params._id, req.body);
         res.send(data);
     } catch (error) {
-        res.status(404).send(error.message);
+        res.send(error.message);
     }
 })
 
 routeSkill.delete('/:_id', async (req, res) => {
     try {
-        const data = await deleteSkillById(req.params._id)
+        const data = await deleteSkillById(req.params._id);
         res.send(data);
     } catch (error) {
-        res.status(404).send(error.message);
+        res.send(error.message);
     }
 })
 

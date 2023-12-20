@@ -6,7 +6,7 @@ async function getAllUserDB() {
 }
 
 async function getUserByIdDB(_id) {
-    const data = await TableUser.find({ _id: new ObjectId(_id)})
+    const data = await TableUser.find({ _id: new ObjectId(_id)});
     return data;
 }
 
@@ -28,4 +28,4 @@ async function deleteUserByIdDB(_id) {
     return data;
 }
 
-module.exports = { getAllUserDB, getUserByIdDB, createUserDB, upUserDB, deleteUserByIdDB }
+module.exports = { getAllUserDB, getUserByIdDB, createUserDB, upUserDB, deleteUserByIdDB };

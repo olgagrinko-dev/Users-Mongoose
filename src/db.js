@@ -18,4 +18,4 @@ const TableSkill = mongoose.model('skills', {
 
 const ObjectId = mongoose.Types.ObjectId;
 
-module.exports = { TableUser, TableSkill, ObjectId }
+module.exports = { TableUser, TableSkill, ObjectId };
